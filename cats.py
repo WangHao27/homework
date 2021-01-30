@@ -1,4 +1,8 @@
+import logging
+
 from animal import Animal
+from decorator import log
+
 
 
 class Cats(Animal):
@@ -7,6 +11,7 @@ class Cats(Animal):
         self.wool = "短毛哦"
         super().__init__("Tom","蓝色","2岁","雄性")
 
+    @log(logging.INFO)
     def catch(self):
         print(f"{self.name}抓老鼠很厉害")
 
